@@ -5,7 +5,7 @@ export interface Props {
     markdownText: string;
 }
 
-class TextPreviewer extends React.Component<Props, object> {
+class TextPreviewer extends React.Component<Props> {
     createHTMLtext = () => {
         const hmtl = marked(this.props.markdownText, {sanitize: true});
         return { __html: hmtl };
