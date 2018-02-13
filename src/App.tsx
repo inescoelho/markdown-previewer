@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
-import MarkdownEditor from './components/markdown_editor';
-import TextPreviewer from './components/text_previewer';
+import MarkdownEditor from './components/MarkdownEditor';
+import TextPreviewer from './components/TextPreviewer';
 
 class App extends React.Component {
   state = {
