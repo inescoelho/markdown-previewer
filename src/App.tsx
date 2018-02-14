@@ -5,12 +5,18 @@ import TextPreviewer from './components/TextPreviewer';
 
 class App extends React.Component {
   state = {
-    text: 'Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \n' +
-      'Paragraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  ' +
-      '\nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n' +
-      '* apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\n' +
-      'The rain---not the reign---in\nSpain.\n\n *[Ines Coelho](http://www.inescoelho.info/)*'
+    text: ''
   };
+
+  componentDidMount() {
+    const url = 'https://gist.githubusercontent.com/inescoelho/0e8305febed09ff640c2f4dbd7b951b4/' +
+    'raw/6b26ad877946889dbd3a6d7367bb0377bac99a5a/md-language-test.txt';
+
+    fetch(url)
+    .then(r => r.text() )
+    .then(text => { this.setState({ text }); });
+
+  }
 
   updateText = (e: React.SyntheticEvent<HTMLTextAreaElement>) => {
     const text = e.currentTarget.value;
