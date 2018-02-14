@@ -9,8 +9,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const url = 'https://gist.githubusercontent.com/inescoelho/0e8305febed09ff640c2f4dbd7b951b4/' +
-    'raw/6b26ad877946889dbd3a6d7367bb0377bac99a5a/md-language-test.txt';
+    const url = 'https://raw.githubusercontent.com/inescoelho/markdown-previewer/master/src/initialText.txt';
 
     fetch(url)
     .then(r => r.text() )
